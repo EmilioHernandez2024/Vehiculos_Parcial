@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <strong>Listado de Productos ({{ productos?.length || 0 }})</strong>
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let p of productos; let i = index"
+          class="list-group-item d-flex justify-content-between align-items-start">
+
+        <div>
+          <img *ngIf="p.imageUrl" [src]="getImageUrl(p.imageUrl)"
+               alt="Img" class="me-2 rounded"
+               style="width: 40px; height: 40px; object-fit: cover;">
+          <strong>{{ i + 1 }}.</strong> {{ p.titulo }} — {{ p.categoria }} —
+          <strong>${{ p.precio }}</strong>
+          <div class="small text-muted">{{ p.descripcion }}</div>
+        </div>
+
+        <div>
+          <button class="btn btn-warning btn-sm me-2" [routerLink]="['/Dashboard/editar', p.id]">
+            <i class="bi bi-pencil-square"></i> Editar / Eliminar
+          </button>
+        </div>
+      </li>
+
+      <li *ngIf="!productos || productos.length === 0" class="list-group-item text-center">
+        No hay productos aún.
+      </li>
+    </ul>
+  </div>
+</div>

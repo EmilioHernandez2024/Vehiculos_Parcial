@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Nuevo Producto para Menú</h4>
+        </div>
+
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                
+                <!-- Controles existentes -->
+                <div class="form-group mb-3">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" class="form-control" name="titulo"[(ngModel)]="producto.titulo" placeholder="Nombre del producto" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" class="form-control" name="descripcion"[(ngModel)]="producto.descripcion"rows="3" placeholder="Descripción detallada del producto"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" class="form-control" name="precio"[(ngModel)]="producto.precio" placeholder="0.00" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" class="form-control" name="categoria"[(ngModel)]="producto.categoria" required>
+                        <option [ngValue]="''" disabled>-- Selecciona una categoría --</option>
+                        <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+                    </select>
+                </div>
+
+                
+                <div class="form-group mb-3">
+                    <label for="imagen">Foto del Producto</label>
+                    <input type="file" id="imagen" class="form-control" 
+                           (change)="onFileSelected($event)" accept="image/*" required>
+                    
+                    <!-- previsualizacion de la foto -->
+                    <div *ngIf="producto.imageUrl && selectedFile" class="mt-2 text-center">
+                        <img [src]="producto.imageUrl" alt="Vista previa" class="img-thumbnail" style="max-height: 150px; max-width: 150px;">
+                        <p class="small text-success mt-1">Archivo seleccionado.</p>
+                    </div>
+                </div>
+
+                <hr>
+                <button type="submit" class="btn btn-success btn-block" 
+                        [disabled]="f.invalid || isUploading">
+                    <span *ngIf="isUploading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    {{ isUploading ? 'Subiendo imagen...' : 'Guardar Producto' }}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+/* Estilos personalizados para el Panel de Administración */
+
+/* Importación de la fuente Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f9;
+}
+
+/* Estilos de las tarjetas de contenido y estadísticas */
+.admin-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Color de fondo primario para la cabecera */
+.main-bg {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+}
