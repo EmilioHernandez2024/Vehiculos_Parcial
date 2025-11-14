@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Menú de Productos</h2>
+    <h2 class="text-center mb-4">Catalogos de vehiculos</h2>
 
     <div *ngFor="let categoria of categorias" class="mb-5">
         <h3 class="text-primary mb-3">{{ categoria }}</h3>
@@ -16,7 +16,9 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{ producto.titulo }}</h5>
-                        <p class="card-text text-muted">{{ producto.descripcion }}</p>
+                        <p class="card-text text-muted">Año: {{ producto.ano }}</p>
+                        <p class="card-text text-muted">Marca: {{ producto.marca }}</p>
+                        <p class="card-text text-muted">Transmision: {{ producto.tramision }}</p>
                         <p class="fw-bold">Precio: ${{ producto.precio }}</p>
                     </div>
                 </div>

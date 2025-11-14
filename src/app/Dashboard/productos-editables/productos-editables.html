@@ -21,14 +21,29 @@
           <input type="number" name="precio" class="form-control" [(ngModel)]="producto.precio" required>
         </div>
 
-        <div class="form-group mb-3">
-          <label>Categoría</label>
-          <select id="categoria" class="form-control" name="categoria" [(ngModel)]="producto.categoria" required>
-            <option [ngValue]="''" disabled>-- Selecciona una categoría --</option>
-            <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
-          </select>
-        </div>
-        
+                <div class="form-group mb-3">
+                    <label for="ano">Año</label>
+                    <select id="ano" class="form-control" name="ano"[(ngModel)]="producto.ano" required>
+                        <option [ngValue]="''" disabled>-- Selecciona una año --</option>
+                        <option *ngFor="let an of ano" [value]="an">{{ an }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="tramision">Transmision</label>
+                    <select id="tramision" class="form-control" name="tramision"[(ngModel)]="producto.tramision" required>
+                        <option [ngValue]="''" disabled>-- Selecciona una transmision --</option>
+                        <option *ngFor="let trans of transmisione" [value]="trans">{{ trans }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" class="form-control" name="categoria"[(ngModel)]="producto.categoria" required>
+                        <option [ngValue]="''" disabled>-- Selecciona una marca --</option>
+                        <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+                    </select>
+                </div>
   
         <div class="form-group mb-3">
             <label>Imagen Actual</label>

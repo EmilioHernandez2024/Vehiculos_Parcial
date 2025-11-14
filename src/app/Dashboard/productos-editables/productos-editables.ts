@@ -19,8 +19,11 @@ export class ProductosEditables implements OnInit {
   private router = inject(Router);
   private http = inject(HttpClient); 
 
-  producto: Productos = new Productos('', '', 0, '');
-  categorias = ['Aperitivos / Entrantes', 'Ensaladas', 'Platos Principales', 'Pastas', 'Postres', 'Bebidas'];
+  producto: Productos = new Productos('', '', 0, '', '', '','');
+  categorias = ['Minivan', 'Familiar', 'Convertible', 'Deportivo', 'SUV', 'Hatchback'];
+  marca = ['Marca A', 'Marca B', 'Marca C'];
+  ano= ['2020', '2021', '2022', '2023'];
+  transmisione = ['Manual', 'Automática', 'Semi-automática'];
   idProducto: string = '';
   
   // Nuevo estado para manejar la nueva imagen seleccionada y la carga

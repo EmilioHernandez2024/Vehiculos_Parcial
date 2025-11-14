@@ -18,8 +18,11 @@ export class Producto {
   private productosService = inject(ProductosService);
   private http = inject(HttpClient);
 
-  producto: Productos = new Productos('', '', 0, '');
-  categorias = ['Aperitivos / Entrantes', 'Ensaladas', 'Platos Principales', 'Pastas', 'Postres', 'Bebidas'];
+  producto: Productos = new Productos('', '', 0, '', '', '','');
+  categorias = ['Minivan', 'Familiar', 'Convertible', 'Deportivo', 'SUV', 'Hatchback'];
+  marca = ['Marca A', 'Marca B', 'Marca C'];
+  ano= ['2020', '2021', '2022', '2023'];
+  transmisione = ['Manual', 'Automática', 'Semi-automática'];
   selectedFile: File | null = null;
   isUploading: boolean = false;
 
@@ -52,7 +55,7 @@ export class Producto {
         next: () => {
           Swal.fire('¡Guardado!', 'El producto se agregó correctamente.', 'success');
           form.resetForm();
-          this.producto = new Productos('', '', 0, '');
+          this.producto = new Productos('', '', 0, '', '', '','');
           this.selectedFile = null;
         },
         error: erro => {

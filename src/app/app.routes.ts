@@ -6,10 +6,15 @@ import { ProductosEditables } from './Dashboard/productos-editables/productos-ed
 import { Listados } from './Dashboard/listados/listados';
 import { DasboardMenu } from './Dashboard/dasboard-menu/dasboard-menu';
 import { Bienvenido } from './Dashboard/bienvenido/bienvenido';
+import { Contacto } from './contacto/contacto';
+import { Nosotros } from './nosotros/nosotros';
+
 
 
 export const routes: Routes = [
   { path: "", component: Menu },
+  { path: "Nosotros", component: Nosotros },
+  { path: "Contacto", component: Contacto },
 
   {
     path: "Dashboard",component: DasboardMenu,children: [

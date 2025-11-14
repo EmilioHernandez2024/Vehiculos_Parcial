@@ -1,0 +1,69 @@
+/* Contenedor principal para la imagen de fondo */
+.about-section {
+    background-image: url('/img/nosotros.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    
+    color: white;
+    /* padding: 50px 0; */ /* Puedes ajustar este padding si el texto está muy arriba o abajo */
+    
+    /* ***** CAMBIO CLAVE AQUÍ ***** */
+    min-height: 100vh; /* Haz que ocupe al menos el 100% de la altura de la ventana */
+    padding-top: 50px; /* Asegura un padding superior para el título */
+    padding-bottom: 50px; /* Asegura un padding inferior antes del pie de página o final */
+
+    display: flex;
+    flex-direction: column; /* Para que los elementos se apilen verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    position: relative;
+    /* Asegúrate de que no haya `height` fijo que lo limite */
+}
+
+/* El resto de los estilos, incluyendo .about-content, .about-section::before, h1, p */
+
+/* Contenedor interno para centrar el texto (sin cambios) */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Overlay para mejorar la legibilidad del texto (sin cambios) */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1em; /* Añade un pequeño margen entre párrafos */
+}
+
+/* Estilos para el pie de página (asegúrate de que no tenga un fondo blanco fijo) */
+.footer { /* O la clase de tu pie de página */
+    background-color: transparent; /* O el color que desees, pero no blanco opaco */
+    color: white; /* Para que el texto del footer también se vea bien */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Para que esté sobre el fondo */
+}
